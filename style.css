@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #000;
+  color: #d4af37;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.logo {
+  max-width: 180px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+section {
+  padding: 35px 12%;
+}
+
+h2 {
+  border-bottom: 1px solid #d4af37;
+  padding-bottom: 8px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.gallery-item {
+  background: #111;
+  border: 1px solid #d4af37;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+}
+
+.gallery-item:hover {
+  background: #d4af37;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.contact {
+  text-align: center;
+}
+
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 22px;
+}
+
