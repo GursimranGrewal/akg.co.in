@@ -1,65 +1,116 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BASE */
 body {
   margin: 0;
   font-family: Calibri, "Segoe UI", Arial, sans-serif;
-  background: #000;
+  background: radial-gradient(circle at top, #111 0%, #000 60%);
   color: #ffffff;
   line-height: 1.6;
 }
 
-header {
+/* HERO */
+.hero {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 50px 20px;
+  background:
+    linear-gradient(135deg, rgba(212,175,55,0.08), transparent),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .logo {
   max-width: 180px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-family: Cambria, serif;
+  font-size: 36px;
+  margin: 10px 0;
 }
 
 .tagline {
   font-style: italic;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
-section {
-  padding: 35px 12%;
+/* SECTIONS */
+.section {
+  padding: 50px 10%;
 }
 
-h1, h2, h3 {
-  font-family: Cambria, "Times New Roman", serif;
+.section.dark {
+  background: linear-gradient(180deg, #050505, #0b0b0b);
 }
 
-h2 {
-  border-bottom: 1px solid #333;
-  padding-bottom: 8px;
+.section h2 {
+  font-family: Cambria, serif;
+  margin-bottom: 20px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
 }
 
-li {
-  margin-bottom: 10px;
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 8px;
 }
 
-/* CONTACT FORM */
+.card h3 {
+  font-family: Cambria, serif;
+  margin-top: 0;
+}
+
+/* CONTACT */
+.contact-section {
+  background:
+    linear-gradient(135deg, rgba(212,175,55,0.05), transparent);
+}
 
 .contact-form {
-  max-width: 500px;
-  margin: 20px auto;
+  max-width: 420px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .contact-form input,
 .contact-form textarea {
-  margin-bottom: 12px;
-  padding: 10px;
-  font-family: Calibri, Arial, sans-serif;
   background: #111;
-  border: 1px solid #444;
+  border: 1px solid #333;
   color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .contact-form button {
@@ -67,33 +118,28 @@ li {
   color: #000;
   border: none;
   padding: 12px;
-  cursor: pointer;
   font-family: Cambria, serif;
+  cursor: pointer;
 }
 
 .contact-form button:hover {
   background: #d4af37;
 }
 
-.contact-details {
+.contact-info {
   text-align: center;
   margin-top: 20px;
+  opacity: 0.9;
 }
 
 /* BRANDS */
-
 .brands {
   text-align: center;
-}
-
-.brand-grid {
   font-size: 14px;
-  line-height: 2;
   opacity: 0.85;
 }
 
 /* WHATSAPP */
-
 .whatsapp {
   position: fixed;
   right: 20px;
