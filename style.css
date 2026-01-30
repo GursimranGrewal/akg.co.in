@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
 
+/* RESET */
 * {
   box-sizing: border-box;
 }
@@ -36,6 +37,8 @@ body {
   list-style: none;
   display: flex;
   gap: 28px;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links a {
@@ -106,15 +109,20 @@ body {
   letter-spacing: 0.5px;
 }
 
+/* ABOUT TEXT */
+.section p {
+  max-width: 900px;
+}
+
 /* SERVICES */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
 }
 
 .service-card {
-  height: 230px;
+  height: 240px;
   background-size: cover;
   background-position: center;
   border-radius: 14px;
@@ -152,6 +160,12 @@ body {
   background: linear-gradient(135deg, rgba(212,175,55,0.06), transparent);
 }
 
+.contact-sub {
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
 .contact-form {
   max-width: 420px;
   margin: 0 auto;
@@ -169,6 +183,11 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
 .contact-form button {
   background: #ffffff;
   color: #000;
@@ -176,17 +195,49 @@ body {
   padding: 12px;
   font-family: 'Space Grotesk', sans-serif;
   cursor: pointer;
+  letter-spacing: 0.5px;
 }
 
 .contact-form button:hover {
   background: #d4af37;
 }
 
-/* BRANDS */
+.contact-info {
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0.9;
+}
+
+/* BRAND LOGOS */
 .brands {
   text-align: center;
-  font-size: 13px;
-  opacity: 0.8;
+}
+
+.brands h2 {
+  margin-bottom: 30px;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 28px;
+  align-items: center;
+}
+
+.brands-grid img {
+  max-height: 48px;
+  max-width: 140px;
+  margin: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.1);
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.brands-grid img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 /* WHATSAPP */
@@ -200,4 +251,23 @@ body {
   border-radius: 50%;
   text-decoration: none;
   font-size: 22px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 6%;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: 34px 6%;
+  }
+
+  .service-card {
+    height: 200px;
+  }
 }
