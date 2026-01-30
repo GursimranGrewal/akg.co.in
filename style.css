@@ -1,200 +1,133 @@
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AKG – Automation & Knowledge Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AKG – Smart Home, Office Automation & IoT Solutions">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-/* BASE */
-body {
-  margin: 0;
-  font-family: Calibri, "Segoe UI", Arial, sans-serif;
-  background: #000;
-  color: #ffffff;
-  line-height: 1.55;
-}
+<body>
 
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 8%;
-  backdrop-filter: blur(6px);
-}
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">AKG</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-.nav-logo {
-  font-family: Cambria, serif;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
+<!-- HERO -->
+<header class="hero-banner" style="background-image:url('assets/hero/hero-smart-home.jpg');">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="assets/logo.png" class="logo" alt="AKG Logo">
+    <h1>Designing Intelligent Environments</h1>
+    <p>Smart Homes • Office Automation • Networking Solutions</p>
+  </div>
+</header>
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 26px;
-}
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About AKG</h2>
+  <p>
+    AKG – Automation & Knowledge Group was born from a deeply personal need to make
+    everyday living easier through technology. What began as a home automation
+    solution has grown into a trusted smart-technology services company.
+  </p>
+  <p>
+    With over <b>100 smart homes delivered</b> and <b>5,000+ switches retrofitted</b>,
+    we design and integrate intelligent systems that are reliable, scalable,
+    and thoughtfully engineered.
+  </p>
+</section>
 
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-}
+<!-- SERVICES -->
+<section id="services" class="section dark">
+  <h2>Our Services</h2>
 
-.nav-links a:hover {
-  color: #d4af37;
-}
+  <div class="services-grid">
 
-/* HERO */
-.hero-banner {
-  height: 80vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+    <div class="service-card" style="background-image:url('assets/services/security.jpg');">
+      <div class="service-text">
+        <h3>Security & Safety</h3>
+        <p>Smart locks, AI surveillance, video doorbells & sensors</p>
+      </div>
+    </div>
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-}
+    <div class="service-card" style="background-image:url('assets/services/lighting.jpg');">
+      <div class="service-text">
+        <h3>Lighting & Ambience</h3>
+        <p>Smart switches, dimmers, motion lighting & curtains</p>
+      </div>
+    </div>
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
+    <div class="service-card" style="background-image:url('assets/services/climate.jpg');">
+      <div class="service-text">
+        <h3>Climate & Energy</h3>
+        <p>Thermostats, HVAC automation & energy monitoring</p>
+      </div>
+    </div>
 
-.logo {
-  max-width: 180px;
-  margin-bottom: 15px;
-}
+    <div class="service-card" style="background-image:url('assets/services/entertainment.jpg');">
+      <div class="service-text">
+        <h3>Entertainment</h3>
+        <p>Multi-room audio, smart TVs & home theatres</p>
+      </div>
+    </div>
 
-.hero-content h1 {
-  font-family: Cambria, serif;
-  font-size: 38px;
-  margin: 10px 0;
-}
+    <div class="service-card" style="background-image:url('assets/services/networking.jpg');">
+      <div class="service-text">
+        <h3>Networking</h3>
+        <p>Enterprise Wi-Fi, hotspots & structured cabling</p>
+      </div>
+    </div>
 
-.hero-content p {
-  opacity: 0.9;
-}
+    <div class="service-card" style="background-image:url('assets/services/underfloor.jpg');">
+      <div class="service-text">
+        <h3>Underfloor Heating</h3>
+        <p>Electric heating solutions for villas & cold regions</p>
+      </div>
+    </div>
 
-/* SECTIONS */
-.section {
-  padding: 45px 8%;
-}
+  </div>
+</section>
 
-.section.dark {
-  background: linear-gradient(180deg, #050505, #0b0b0b);
-}
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <h2>Contact Us</h2>
+  <p class="contact-sub">
+    Tell us about your requirement and our team will connect with you.
+  </p>
 
-.section h2 {
-  font-family: Cambria, serif;
-  margin-bottom: 20px;
-}
+  <form action="https://formspree.io/f/xbldzqvy" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="tel" name="phone" placeholder="Phone Number">
+    <textarea name="message" rows="4" placeholder="Your requirements" required></textarea>
+    <button type="submit">Submit Enquiry</button>
+  </form>
 
-/* SERVICES */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 20px;
-}
+  <div class="contact-info">
+    📞 +91 98716 76565<br>
+    📍 83, Kailash Hills, New Delhi – 110065
+  </div>
+</section>
 
-.service-card {
-  height: 230px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
-}
+<!-- BRANDS -->
+<section class="section brands">
+  <h2>Platforms & Technologies</h2>
+  <p>
+    Amazon Alexa • Google Home • Apple HomeKit • Samsung SmartThings • Tuya Smart •
+    Tinxy • Smart Life • Hikvision • CP Plus • Sonos • TP-Link • Bosch • Sonoff •
+    Siemens • Cisco • Schneider Electric • Philips Hue • Bose • Honeywell Home
+  </p>
+</section>
 
-.service-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
+<a href="https://wa.me/919871676565" class="whatsapp" target="_blank">💬</a>
 
-.service-text {
-  position: absolute;
-  bottom: 18px;
-  left: 18px;
-  z-index: 1;
-}
-
-.service-text h3 {
-  font-family: Cambria, serif;
-  margin: 0 0 6px;
-}
-
-/* CONTACT */
-.contact-section {
-  background: linear-gradient(135deg, rgba(212,175,55,0.06), transparent);
-}
-
-.contact-sub {
-  text-align: center;
-  margin-bottom: 20px;
-  opacity: 0.85;
-}
-
-.contact-form {
-  max-width: 420px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  background: #111;
-  border: 1px solid #333;
-  color: #fff;
-  padding: 10px;
-}
-
-.contact-form button {
-  background: #ffffff;
-  color: #000;
-  border: none;
-  padding: 12px;
-  font-family: Cambria, serif;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #d4af37;
-}
-
-.contact-info {
-  text-align: center;
-  margin-top: 20px;
-  opacity: 0.9;
-}
-
-/* BRANDS */
-.brands {
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: #25d366;
-  color: #fff;
-  padding: 14px 16px;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 22px;
-}
+</body>
+</html>
