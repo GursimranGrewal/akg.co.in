@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
 
-/* RESET */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-/* BASE */
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #000;
-  color: #ffffff;
+  color: #fff;
   line-height: 1.55;
 }
 
@@ -29,7 +27,6 @@ body {
 
 .nav-logo {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 20px;
   letter-spacing: 2px;
 }
 
@@ -37,19 +34,25 @@ body {
   list-style: none;
   display: flex;
   gap: 28px;
-  padding: 0;
-  margin: 0;
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
 }
 
-.nav-links a:hover {
-  color: #d4af37;
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  margin: 4px 0;
 }
 
 /* HERO */
@@ -59,8 +62,8 @@ body {
   background-position: center;
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -72,25 +75,11 @@ body {
 
 .hero-content {
   position: relative;
-  z-index: 1;
 }
 
 .logo {
   max-width: 160px;
   margin-bottom: 20px;
-}
-
-.hero-content h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 42px;
-  font-weight: 500;
-  margin: 10px 0;
-  letter-spacing: 1px;
-}
-
-.hero-content p {
-  opacity: 0.85;
-  font-size: 15px;
 }
 
 /* SECTIONS */
@@ -102,32 +91,19 @@ body {
   background: linear-gradient(180deg, #050505, #0b0b0b);
 }
 
-.section h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  margin-bottom: 20px;
-  font-size: 26px;
-  letter-spacing: 0.5px;
-}
-
-/* ABOUT TEXT */
-.section p {
-  max-width: 900px;
-}
-
 /* SERVICES */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
   gap: 22px;
 }
 
 .service-card {
   height: 240px;
+  border-radius: 14px;
   background-size: cover;
   background-position: center;
-  border-radius: 14px;
   position: relative;
-  overflow: hidden;
 }
 
 .service-card::before {
@@ -141,34 +117,12 @@ body {
   position: absolute;
   bottom: 18px;
   left: 18px;
-  z-index: 1;
-}
-
-.service-text h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  margin: 0 0 6px;
-  font-size: 18px;
-}
-
-.service-text p {
-  font-size: 13px;
-  opacity: 0.85;
 }
 
 /* CONTACT */
-.contact-section {
-  background: linear-gradient(135deg, rgba(212,175,55,0.06), transparent);
-}
-
-.contact-sub {
-  text-align: center;
-  margin-bottom: 20px;
-  opacity: 0.85;
-}
-
 .contact-form {
   max-width: 420px;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -180,64 +134,45 @@ body {
   border: 1px solid #333;
   color: #fff;
   padding: 11px;
-  font-family: 'Inter', sans-serif;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #aaa;
 }
 
 .contact-form button {
-  background: #ffffff;
+  background: #fff;
   color: #000;
-  border: none;
   padding: 12px;
-  font-family: 'Space Grotesk', sans-serif;
-  cursor: pointer;
-  letter-spacing: 0.5px;
+  border: none;
 }
 
-.contact-form button:hover {
-  background: #d4af37;
-}
-
-.contact-info {
-  text-align: center;
-  margin-top: 20px;
-  opacity: 0.9;
-}
-
-/* BRAND LOGOS */
-.brands {
-  text-align: center;
-}
-
-.brands h2 {
-  margin-bottom: 30px;
-}
-
+/* BRANDS */
 .brands-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 28px;
-  align-items: center;
 }
 
 .brands-grid img {
   max-height: 48px;
-  max-width: 140px;
-  margin: auto;
   object-fit: contain;
-  filter: grayscale(100%) brightness(1.1);
+  filter: grayscale(100%);
   opacity: 0.85;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .brands-grid img:hover {
   filter: none;
   opacity: 1;
-  transform: scale(1.05);
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* WHATSAPP */
@@ -246,25 +181,33 @@ body {
   right: 20px;
   bottom: 20px;
   background: #25d366;
-  color: #fff;
-  padding: 14px 16px;
+  padding: 14px;
   border-radius: 50%;
-  text-decoration: none;
-  font-size: 22px;
+  color: #fff;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 12px 6%;
+  .hamburger { display: flex; }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
   }
 
-  .hero-content h1 {
-    font-size: 32px;
+  .nav-links.active {
+    max-height: 300px;
   }
 
   .section {
-    padding: 34px 6%;
+    padding: 32px 6%;
   }
 
   .service-card {
