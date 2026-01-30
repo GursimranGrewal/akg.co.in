@@ -13,7 +13,14 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-logo">AKG</div>
-  <ul class="nav-links">
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -31,7 +38,7 @@
 </header>
 
 <!-- ABOUT -->
-<section id="about" class="section">
+<section id="about" class="section reveal">
   <h2>About AKG</h2>
   <p>
     AKG – Automation & Knowledge Group was born from a deeply personal need to make
@@ -46,7 +53,7 @@
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section dark">
+<section id="services" class="section dark reveal">
   <h2>Our Services</h2>
 
   <div class="services-grid">
@@ -97,11 +104,8 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section contact-section">
+<section id="contact" class="section contact-section reveal">
   <h2>Contact Us</h2>
-  <p class="contact-sub">
-    Tell us about your requirement and our team will connect with you.
-  </p>
 
   <form action="https://formspree.io/f/xbldzqvy" method="POST" class="contact-form">
     <input type="text" name="name" placeholder="Your Name" required>
@@ -118,36 +122,62 @@
 </section>
 
 <!-- BRANDS -->
-<section class="section brands">
+<section class="section brands reveal">
   <h2>Platforms & Technologies We Work With</h2>
 
   <div class="brands-grid">
-    <img src="assets/brands/amazon_alexa_logo.png" alt="Amazon Alexa">
-    <img src="assets/brands/google_home_logo.png" alt="Google Home">
-    <img src="assets/brands/smartthings.png" alt="Samsung SmartThings">
-    <img src="assets/brands/tuya_logo.png" alt="Tuya Smart">
-    <img src="assets/brands/tinxy_logo.png" alt="Tinxy">
-    <img src="assets/brands/smart_life_logo.png" alt="Smart Life">
-
-    <img src="assets/brands/hikvision_logo.png" alt="Hikvision">
-    <img src="assets/brands/cp_plus_logo.png" alt="CP Plus">
-    <img src="assets/brands/sonos_logo.png" alt="Sonos">
-    <img src="assets/brands/tapo_logo.png" alt="TP-Link Tapo">
-    <img src="assets/brands/tp-link_logo.png" alt="TP-Link">
-    <img src="assets/brands/omada_logo.png" alt="TP-Link Omada">
-
-    <img src="assets/brands/Bosch-IoT_logo.png" alt="Bosch IoT">
-    <img src="assets/brands/siemens_logo.png" alt="Siemens">
-    <img src="assets/brands/schneider_electric_logo.png" alt="Schneider Electric">
-    <img src="assets/brands/bose_logo.png" alt="Bose">
-    <img src="assets/brands/honeywell_home_logo.png" alt="Honeywell Home">
-    <img src="assets/brands/SONOFF_logo.png" alt="Sonoff">
-    <img src="assets/brands/cisco_logo.png" alt="Cisco">
+    <img src="assets/brands/alexa_logo.png">
+    <img src="assets/brands/echo_amazon.png">
+    <img src="assets/brands/google_home_logo.png">
+    <img src="assets/brands/apple_home_logo.png">
+    <img src="assets/brands/smartthing_logo.png">
+    <img src="assets/brands/tuya_logo.png">
+    <img src="assets/brands/tinxy_logo.png">
+    <img src="assets/brands/smart_life_logo.png">
+    <img src="assets/brands/tp-link_logo.png">
+    <img src="assets/brands/omada_logo.png">
+    <img src="assets/brands/tapo_logo.png">
+    <img src="assets/brands/ubiquiti_networks_logo.png">
+    <img src="assets/brands/cisco_logo.png">
+    <img src="assets/brands/hikvision_logo.png">
+    <img src="assets/brands/cp_plus_logo.png">
+    <img src="assets/brands/Bosch-IoT_logo.png">
+    <img src="assets/brands/schneider_electric_logo.png">
+    <img src="assets/brands/crabtree_logo.png">
+    <img src="assets/brands/SONOFF_logo.png">
+    <img src="assets/brands/honeywell_home_logo.png">
+    <img src="assets/brands/sonos_logo.png">
+    <img src="assets/brands/bose_logo.png">
+    <img src="assets/brands/philips_hue_logo.png">
   </div>
 </section>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/919871676565" class="whatsapp" target="_blank">💬</a>
+
+<!-- JS -->
+<script>
+  /* Hamburger */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  /* Scroll reveal */
+  const reveals = document.querySelectorAll('.reveal');
+  const revealOnScroll = () => {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 120) {
+        el.classList.add('active');
+      }
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
 
 </body>
 </html>
